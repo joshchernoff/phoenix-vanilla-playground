@@ -70,10 +70,15 @@ defmodule VanillaPlayground2.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind vanilla_playground2", "esbuild vanilla_playground2"],
+      "assets.build": [
+        "tailwind vanilla_playground2",
+        "esbuild vanilla_playground2",
+        "esbuild service_worker"
+      ],
       "assets.deploy": [
         "tailwind vanilla_playground2 --minify",
         "esbuild vanilla_playground2 --minify",
+        "esbuild service_worker --minify",
         "phx.digest"
       ]
     ]
