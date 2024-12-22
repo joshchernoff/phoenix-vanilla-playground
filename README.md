@@ -1,6 +1,29 @@
 # VanillaPlayground
 
 ![vanilla playground](./priv/static/images/vanilla.webp)
+
+A minimal Phoenix app starting point
+
+NO:
+
+- Ecto
+- Tailwind
+- CoreComponents.ex
+- LiveView
+
+Added:
+
+- Basic Channel
+- Postcss + Nested Css plugin + AutoPrefixer
+- Simple CSS with darkmode
+- ESM JS modules
+- Esbuild config
+
+Roadmap:
+
+- Dockerize
+- Auth
+
 To start your Phoenix server:
 
 - Run `mix setup` to install and setup dependencies
