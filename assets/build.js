@@ -1,7 +1,7 @@
 import { context, build } from "esbuild";
 import autoprefixer from "autoprefixer";
 import postCssPlugin from "@deanc/esbuild-plugin-postcss";
-import postCSSNested from 'postcss-nested';
+import postCSSNested from "postcss-nested";
 
 const args = process.argv.slice(2);
 const watch = args.includes("--watch");
@@ -20,6 +20,7 @@ const plugins = [
 // Define esbuild options
 let opts = {
   entryPoints: ["js/app.js", "js/sw.js", "js/home.js", "css/app.css"],
+  entryNames: "[name]",
   bundle: true,
   splitting: true,
   format: "esm",
