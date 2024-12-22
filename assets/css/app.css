@@ -1,0 +1,42 @@
+:root {
+  --prime-forground-color: #312547;
+  --secondary-forground-color: #5e5a65;
+  --prime-background-color: #e4deef;
+  --secondary-background-color: #e0d9eb;
+  --forground-color: #222;
+  --background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --prime-forground-color: #e4deef;
+    --secondary-forground-color: #e0d9eb;
+    --prime-background-color: #312547;
+    --secondary-background-color: #5e5a65;
+    --forground-color: white;
+    --background-color: #222;
+  }
+}
+body {
+  color: var(--forground-color);
+  background-color: var(--background-color);
+}
+h1 {
+  color: var(--prime-forground-color);
+}
+p {
+  color: var(--secondary-forground-color);
+}
+button {
+  font-weight: 700;
+  padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+  margin: 0.2rem 0.3rem 0.2rem 0.3rem;
+  border-radius: 0.2rem;
+  border: none;
+  color: var(--prime-forground-color);
+  background-color: var(--prime-background-color);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--secondary-background-color);
+  }
+}

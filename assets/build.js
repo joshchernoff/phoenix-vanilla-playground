@@ -1,4 +1,7 @@
-const esbuild = require("esbuild");
+import { context, build } from "esbuild";
+import autoprefixer from "autoprefixer";
+import postCssPlugin from "@deanc/esbuild-plugin-postcss";
+import postCSSNested from 'postcss-nested';
 
 const args = process.argv.slice(2);
 const watch = args.includes("--watch");
@@ -9,17 +12,21 @@ const loader = {
 };
 
 const plugins = [
-  // Add and configure plugins here
+  postCssPlugin({
+    plugins: [autoprefixer, postCSSNested],
+  }),
 ];
 
 // Define esbuild options
 let opts = {
-  entryPoints: ["js/app.js", "js/sw.js", "js/home.js"],
+  entryPoints: ["js/app.js", "js/sw.js", "js/home.js", "css/app.css"],
   bundle: true,
+  splitting: true,
+  format: "esm",
   logLevel: "info",
   target: "esnext",
   outdir: "../priv/static/assets",
-  external: ["*.css", "fonts/*", "images/*"],
+  external: ["fonts/*", "images/*"],
   nodePaths: ["../deps"],
   loader: loader,
   plugins: plugins,
@@ -37,8 +44,7 @@ if (watch) {
     ...opts,
     sourcemap: "inline",
   };
-  esbuild
-    .context(opts)
+  context(opts)
     .then((ctx) => {
       ctx.watch();
     })
@@ -46,5 +52,5 @@ if (watch) {
       process.exit(1);
     });
 } else {
-  esbuild.build(opts);
+  build(opts);
 }
