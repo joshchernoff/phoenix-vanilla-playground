@@ -9,10 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Button clicked! Loading feature...");
 
     // Dynamically import the module
-    const { loadFeature } = await import("./feature.js");
+    import("./user_socket.js").then((module) => {
+      module.default.on("shout", (payload) => {
+        console.log(payload);
+      });
 
-    // Use the imported module
-    const result = loadFeature();
-    console.log(result);
+      document.getElementById("shout").addEventListener("click", () => {
+        module.default.push("shout", { payload: "foobar" });
+      });
+    });
   });
 });

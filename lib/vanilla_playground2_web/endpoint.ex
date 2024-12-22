@@ -11,6 +11,10 @@ defmodule VanillaPlayground2Web.Endpoint do
     same_site: "Lax"
   ]
 
+  socket "/socket", VanillaPlayground2Web.UserSocket,
+    websocket: true,
+    longpoll: false
+
   # socket "/live", Phoenix.LiveView.Socket,
   #   websocket: [connect_info: [session: @session_options]],
   #   longpoll: [connect_info: [session: @session_options]]
