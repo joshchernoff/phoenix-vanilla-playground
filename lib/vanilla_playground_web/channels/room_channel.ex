@@ -24,10 +24,7 @@ defmodule VanillaPlaygroundWeb.RoomChannel do
     {:noreply, socket}
   end
 
-  # def handle_in("likes", payload, socket) do
-  #   {:reply, {:ok, payload}, socket}
-  # end
-
+  # Phoenix.PubSub.broadcast(VanillaPlayground.PubSub, "room:posts", {"likes", %{foo: :bar}})
   @impl true
   def handle_info({"likes", payload}, socket) do
     push(socket, "likes", payload)
