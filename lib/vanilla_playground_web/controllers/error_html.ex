@@ -1,17 +1,17 @@
-defmodule VanillaPlayground2Web.ErrorHTML do
+defmodule VanillaPlaygroundWeb.ErrorHTML do
   @moduledoc """
   This module is invoked by your endpoint in case of errors on HTML requests.
 
   See config/config.exs.
   """
-  use VanillaPlayground2Web, :html
+  use VanillaPlaygroundWeb, :html
 
   # If you want to customize your error pages,
   # uncomment the embed_templates/1 call below
   # and add pages to the error directory:
   #
-  #   * lib/vanilla_playground2_web/controllers/error_html/404.html.heex
-  #   * lib/vanilla_playground2_web/controllers/error_html/500.html.heex
+  #   * lib/vanilla_playground_web/controllers/error_html/404.html.heex
+  #   * lib/vanilla_playground_web/controllers/error_html/500.html.heex
   #
   # embed_templates "error_html/*"
 

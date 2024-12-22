@@ -1,12 +1,12 @@
-defmodule VanillaPlayground2Web do
+defmodule VanillaPlaygroundWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use VanillaPlayground2Web, :controller
-      use VanillaPlayground2Web, :html
+      use VanillaPlaygroundWeb, :controller
+      use VanillaPlaygroundWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,7 +40,7 @@ defmodule VanillaPlayground2Web do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: VanillaPlayground2Web.Layouts]
+        layouts: [html: VanillaPlaygroundWeb.Layouts]
 
       import Plug.Conn
 
@@ -51,7 +51,7 @@ defmodule VanillaPlayground2Web do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {VanillaPlayground2Web.Layouts, :app}
+        layout: {VanillaPlaygroundWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -95,9 +95,9 @@ defmodule VanillaPlayground2Web do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: VanillaPlayground2Web.Endpoint,
-        router: VanillaPlayground2Web.Router,
-        statics: VanillaPlayground2Web.static_paths()
+        endpoint: VanillaPlaygroundWeb.Endpoint,
+        router: VanillaPlaygroundWeb.Router,
+        statics: VanillaPlaygroundWeb.static_paths()
     end
   end
 

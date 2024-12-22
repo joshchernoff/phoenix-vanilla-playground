@@ -1,6 +1,6 @@
-defmodule VanillaPlayground2 do
+defmodule VanillaPlayground do
   @moduledoc """
-  VanillaPlayground2 keeps the contexts that define your domain
+  VanillaPlayground keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

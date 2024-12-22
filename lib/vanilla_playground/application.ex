@@ -1,4 +1,4 @@
-defmodule VanillaPlayground2.Application do
+defmodule VanillaPlayground.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,22 +8,22 @@ defmodule VanillaPlayground2.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      VanillaPlayground2Web.Telemetry,
-      VanillaPlayground2.Repo,
+      VanillaPlaygroundWeb.Telemetry,
+      VanillaPlayground.Repo,
       {Ecto.Migrator,
-        repos: Application.fetch_env!(:vanilla_playground2, :ecto_repos),
-        skip: skip_migrations?()},
-      {DNSCluster, query: Application.get_env(:vanilla_playground2, :dns_cluster_query) || :ignore},
-      {Phoenix.PubSub, name: VanillaPlayground2.PubSub},
-      # Start a worker by calling: VanillaPlayground2.Worker.start_link(arg)
-      # {VanillaPlayground2.Worker, arg},
+       repos: Application.fetch_env!(:vanilla_playground, :ecto_repos), skip: skip_migrations?()},
+      {DNSCluster,
+       query: Application.get_env(:vanilla_playground, :dns_cluster_query) || :ignore},
+      {Phoenix.PubSub, name: VanillaPlayground.PubSub},
+      # Start a worker by calling: VanillaPlayground.Worker.start_link(arg)
+      # {VanillaPlayground.Worker, arg},
       # Start to serve requests, typically the last entry
-      VanillaPlayground2Web.Endpoint
+      VanillaPlaygroundWeb.Endpoint
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: VanillaPlayground2.Supervisor]
+    opts = [strategy: :one_for_one, name: VanillaPlayground.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -31,7 +31,7 @@ defmodule VanillaPlayground2.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    VanillaPlayground2Web.Endpoint.config_change(changed, removed)
+    VanillaPlaygroundWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 

@@ -1,5 +1,5 @@
-defmodule VanillaPlayground2Web.PageControllerTest do
-  use VanillaPlayground2Web.ConnCase
+defmodule VanillaPlaygroundWeb.PageControllerTest do
+  use VanillaPlaygroundWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

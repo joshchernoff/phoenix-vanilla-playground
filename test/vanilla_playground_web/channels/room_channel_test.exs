@@ -1,11 +1,11 @@
-defmodule VanillaPlayground2Web.RoomChannelTest do
-  use VanillaPlayground2Web.ChannelCase
+defmodule VanillaPlaygroundWeb.RoomChannelTest do
+  use VanillaPlaygroundWeb.ChannelCase
 
   setup do
     {:ok, _, socket} =
-      VanillaPlayground2Web.UserSocket
+      VanillaPlaygroundWeb.UserSocket
       |> socket("user_id", %{some: :assign})
-      |> subscribe_and_join(VanillaPlayground2Web.RoomChannel, "room:lobby")
+      |> subscribe_and_join(VanillaPlaygroundWeb.RoomChannel, "room:lobby")
 
     %{socket: socket}
   end

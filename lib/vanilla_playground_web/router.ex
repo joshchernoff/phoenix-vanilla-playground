@@ -1,11 +1,11 @@
-defmodule VanillaPlayground2Web.Router do
-  use VanillaPlayground2Web, :router
+defmodule VanillaPlaygroundWeb.Router do
+  use VanillaPlaygroundWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, html: {VanillaPlayground2Web.Layouts, :root}
+    plug :put_root_layout, html: {VanillaPlaygroundWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,14 +14,14 @@ defmodule VanillaPlayground2Web.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", VanillaPlayground2Web do
+  scope "/", VanillaPlaygroundWeb do
     pipe_through :browser
 
     get "/", PageController, :home
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", VanillaPlayground2Web do
+  # scope "/api", VanillaPlaygroundWeb do
   #   pipe_through :api
   # end
 end

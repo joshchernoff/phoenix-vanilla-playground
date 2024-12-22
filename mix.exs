@@ -1,9 +1,9 @@
-defmodule VanillaPlayground2.MixProject do
+defmodule VanillaPlayground.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :vanilla_playground2,
+      app: :vanilla_playground,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule VanillaPlayground2.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {VanillaPlayground2.Application, []},
+      mod: {VanillaPlayground.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

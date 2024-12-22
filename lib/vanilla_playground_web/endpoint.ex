@@ -1,17 +1,17 @@
-defmodule VanillaPlayground2Web.Endpoint do
-  use Phoenix.Endpoint, otp_app: :vanilla_playground2
+defmodule VanillaPlaygroundWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :vanilla_playground
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_vanilla_playground2_key",
+    key: "_vanilla_playground_key",
     signing_salt: "dR+BVDGE",
     same_site: "Lax"
   ]
 
-  socket "/socket", VanillaPlayground2Web.UserSocket,
+  socket "/socket", VanillaPlaygroundWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -25,9 +25,9 @@ defmodule VanillaPlayground2Web.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :vanilla_playground2,
+    from: :vanilla_playground,
     gzip: false,
-    only: VanillaPlayground2Web.static_paths()
+    only: VanillaPlaygroundWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -35,7 +35,7 @@ defmodule VanillaPlayground2Web.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :vanilla_playground2
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :vanilla_playground
   end
 
   plug Plug.RequestId
@@ -49,5 +49,5 @@ defmodule VanillaPlayground2Web.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug VanillaPlayground2Web.Router
+  plug VanillaPlaygroundWeb.Router
 end

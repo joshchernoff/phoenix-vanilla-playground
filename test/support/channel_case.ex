@@ -1,4 +1,4 @@
-defmodule VanillaPlayground2Web.ChannelCase do
+defmodule VanillaPlaygroundWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -11,7 +11,7 @@ defmodule VanillaPlayground2Web.ChannelCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use VanillaPlayground2Web.ChannelCase, async: true`, although
+  by setting `use VanillaPlaygroundWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -21,15 +21,15 @@ defmodule VanillaPlayground2Web.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
-      import VanillaPlayground2Web.ChannelCase
+      import VanillaPlaygroundWeb.ChannelCase
 
       # The default endpoint for testing
-      @endpoint VanillaPlayground2Web.Endpoint
+      @endpoint VanillaPlaygroundWeb.Endpoint
     end
   end
 
   setup tags do
-    VanillaPlayground2.DataCase.setup_sandbox(tags)
+    VanillaPlayground.DataCase.setup_sandbox(tags)
     :ok
   end
 end

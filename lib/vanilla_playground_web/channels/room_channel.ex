@@ -1,5 +1,5 @@
-defmodule VanillaPlayground2Web.RoomChannel do
-  use VanillaPlayground2Web, :channel
+defmodule VanillaPlaygroundWeb.RoomChannel do
+  use VanillaPlaygroundWeb, :channel
 
   @impl true
   def join("room:lobby", payload, socket) do

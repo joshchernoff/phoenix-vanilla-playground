@@ -1,4 +1,4 @@
-defmodule VanillaPlayground2Web.Telemetry do
+defmodule VanillaPlaygroundWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -52,23 +52,23 @@ defmodule VanillaPlayground2Web.Telemetry do
       ),
 
       # Database Metrics
-      summary("vanilla_playground2.repo.query.total_time",
+      summary("vanilla_playground.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("vanilla_playground2.repo.query.decode_time",
+      summary("vanilla_playground.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("vanilla_playground2.repo.query.query_time",
+      summary("vanilla_playground.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("vanilla_playground2.repo.query.queue_time",
+      summary("vanilla_playground.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("vanilla_playground2.repo.query.idle_time",
+      summary("vanilla_playground.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -86,7 +86,7 @@ defmodule VanillaPlayground2Web.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {VanillaPlayground2Web, :count_users, []}
+      # {VanillaPlaygroundWeb, :count_users, []}
     ]
   end
 end
