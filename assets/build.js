@@ -19,7 +19,13 @@ const plugins = [
 
 // Define esbuild options
 let opts = {
-  entryPoints: ["js/app.js", "js/sw.js", "js/home.js", "css/app.css"],
+  entryPoints: [
+    "js/app.js",
+    "js/sw.js",
+    "js/home.js",
+    "js/blog.js",
+    "css/app.css",
+  ],
   entryNames: "[name]",
   bundle: true,
   splitting: true,

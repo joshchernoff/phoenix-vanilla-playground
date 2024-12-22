@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Dynamically import the module
     import("./user_socket.js").then((module) => {
-      module.default.on("shout", (payload) => {
+      module.channel.on("shout", (payload) => {
         console.log(payload);
       });
 
       document.getElementById("shout").addEventListener("click", () => {
-        module.default.push("shout", { payload: "foobar" });
+        module.channel.push("shout", { payload: "foobar" });
       });
     });
   });
