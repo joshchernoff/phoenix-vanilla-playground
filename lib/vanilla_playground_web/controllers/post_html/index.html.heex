@@ -1,0 +1,12 @@
+<h1>Blog</h1>
+<p>A sample list of posts</p>
+
+<div id="posts">
+  <article :for={post <- @posts} id={post.id}>
+    <a href={~p"/posts/#{post}"}>
+      <h3>{post.title}</h3>
+    </a>
+    <div>{post.body}</div>
+    <div><span>{post.likes}</span></div>
+  </article>
+</div>

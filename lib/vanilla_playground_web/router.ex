@@ -16,6 +16,7 @@ defmodule VanillaPlaygroundWeb.Router do
 
   scope "/", VanillaPlaygroundWeb do
     pipe_through :browser
+    resources "/posts", PostController, only: [:index, :show]
 
     get "/", PageController, :home
   end
