@@ -1,1 +1,7 @@
 Home
+<div :for={i <- @test_list}>
+  <button id={"button-#{i}"}>{i}</button>
+</div>
+
+<script defer phx-track-static type="module" src={~p"/assets/home.js"}>
+</script>

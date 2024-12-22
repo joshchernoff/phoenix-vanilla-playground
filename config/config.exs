@@ -23,31 +23,14 @@ config :vanilla_playground2, VanillaPlayground2Web.Endpoint,
   live_view: [signing_salt: "fgLkJefO"]
 
 # Configure esbuild (the version is required)
-config :esbuild,
-  version: "0.17.11",
-  vanilla_playground2: [
-    args:
-      ~w(js/app.js --bundle --target=es2017 --format=esm --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
-    cd: Path.expand("../assets", __DIR__),
-    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
-  ],
-  service_worker: [
-    args: ~w(js/sw.js --bundle --target=es2017 --format=esm --outdir=../priv/static/assets),
-    cd: Path.expand("../assets", __DIR__),
-    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
-  ]
-
-# Configure tailwind (the version is required)
-config :tailwind,
-  version: "3.4.3",
-  vanilla_playground2: [
-    args: ~w(
-      --config=tailwind.config.js
-      --input=css/app.css
-      --output=../priv/static/assets/app.css
-    ),
-    cd: Path.expand("../assets", __DIR__)
-  ]
+# config :esbuild,
+#   version: "0.17.11",
+#   vanilla_playground2: [
+#     args:
+#       ~w(js/app.js js/home.js js/sw.js --bundle --splitting --target=esnext --format=esm --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+#     cd: Path.expand("../assets", __DIR__),
+#     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+#   ]
 
 # Configures Elixir's Logger
 config :logger, :console,

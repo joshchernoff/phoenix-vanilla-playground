@@ -22,9 +22,7 @@ config :vanilla_playground2, VanillaPlayground2Web.Endpoint,
   debug_errors: true,
   secret_key_base: "8g3OORsU14VNa2a6QGgt4DsGgkzZHWRFwn6ANbqezf7yPiM+G9BnA8pJfiRoq9xg",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:vanilla_playground2, ~w(--sourcemap=inline --watch)]},
-    esbuild: {Esbuild, :install_and_run, [:service_worker, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:vanilla_playground2, ~w(--watch)]}
+    node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)]
   ]
 
 # ## SSL Support

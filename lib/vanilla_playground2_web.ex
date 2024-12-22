@@ -83,7 +83,6 @@ defmodule VanillaPlayground2Web do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components
-      import VanillaPlayground2Web.CoreComponents
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
