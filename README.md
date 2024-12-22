@@ -4,6 +4,12 @@
 
 A minimal Phoenix app starting point
 
+The priceples of this project is create a starting point to embrace JS again, embrace CSS again and to not delagate everything to Liveview.
+This will be useful when investigating 3rd party JS frameworks and or any other frameworks I want to try and incorparate with Elixir/Phoenix.
+The point of this project is not to be a starting point for your sass but rather a clean starting point for trying ideas or frameworks with little setup.
+
+### Out of the box
+
 NO:
 
 - Ecto
