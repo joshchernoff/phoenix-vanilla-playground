@@ -27,7 +27,6 @@ vanilla_playground2-*.tar
 
 # Ignore assets that are produced by build tools.
 /priv/static/assets/
-
 !/priv/static/assets/build.js
 
 # Ignore digested assets cache.
