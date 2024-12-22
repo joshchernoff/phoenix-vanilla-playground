@@ -24,13 +24,13 @@ defmodule VanillaPlaygroundWeb.RoomChannel do
     {:noreply, socket}
   end
 
-  def handle_in("likes", payload, socket) do
-    {:reply, {:ok, payload}, socket}
-  end
+  # def handle_in("likes", payload, socket) do
+  #   {:reply, {:ok, payload}, socket}
+  # end
 
   @impl true
   def handle_info({"likes", payload}, socket) do
-    broadcast(socket, "likes", payload)
+    push(socket, "likes", payload)
     {:noreply, socket}
   end
 end
