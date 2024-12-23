@@ -1,51 +1,144 @@
 @import "../node_modules/modern-normalize/modern-normalize.css";
 
 :root {
-  --prime-forground-color: #312547;
-  --secondary-forground-color: #5e5a65;
-  --prime-background-color: #e4deef;
-  --secondary-background-color: #e0d9eb;
-  --forground-color: #222;
-  --background-color: white;
+  --color-slate-1: hsl(215, 16%, 90%);
+  --color-slate-2: hsl(215, 16%, 80%);
+  --color-slate-3: hsl(215, 16%, 70%);
+  --color-slate-4: hsl(215, 16%, 60%);
+  --color-slate-5: hsl(215, 16%, 50%);
+  --color-slate-6: hsl(215, 16%, 40%);
+  --color-slate-7: hsl(215, 16%, 30%);
+  --color-slate-8: hsl(215, 16%, 20%);
+  --color-slate-9: hsl(215, 16%, 10%);
+
+  --color-zinc-1: hsl(240, 4%, 90%);
+  --color-zinc-2: hsl(240, 4%, 80%);
+  --color-zinc-3: hsl(240, 4%, 70%);
+  --color-zinc-4: hsl(240, 4%, 60%);
+  --color-zinc-5: hsl(240, 4%, 50%);
+  --color-zinc-6: hsl(240, 4%, 40%);
+  --color-zinc-7: hsl(240, 4%, 30%);
+  --color-zinc-8: hsl(240, 4%, 20%);
+  --color-zinc-9: hsl(240, 4%, 10%);
+
+  /* forground */
+  --primary-forground-color: var(--color-zinc-9);
+  --secondary-forground-color: var(--color-zinc-6);
+
+  /* Background */
+  --primary-background-color: var(--color-zinc-1);
+  --secondary-background-color: var(--color-zinc-4);
+
+  /* Button bg*/
+  --primary-button-bg-color: var(--color-zinc-8);
+  --secondary-button-bg-color: var(--color-zinc-7);
+
+  /* Button text */
+  --primary-button-text-color: var(--color-zinc-2);
+  --secondary-button-text-color: var(--color-zinc-3);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --prime-forground-color: #e4deef;
-    --secondary-forground-color: #e0d9eb;
-    --prime-background-color: #312547;
-    --secondary-background-color: #5e5a65;
-    --forground-color: white;
-    --background-color: #222;
+    --primary-forground-color: var(--color-zinc-1);
+    --secondary-forground-color: var(--color-zinc-4);
+
+    --primary-background-color: var(--color-zinc-9);
+    --secondary-background-color: var(--color-zinc-6);
+
+    --primary-button-bg-color: var(--color-zinc-2);
+    --secondary-button-bg-color: var(--color-zinc-3);
+
+    --primary-button-text-color: var(--color-zinc-8);
+    --secondary-button-text-color: var(--color-zinc-7);
   }
 }
+
+/* Example bg classes */
+.bg-slate-100 {
+  background-color: var(--color-slate-1);
+}
+.bg-slate-200 {
+  background-color: var(--color-slate-2);
+}
+.bg-slate-300 {
+  background-color: var(--color-slate-3);
+}
+.bg-slate-400 {
+  background-color: var(--color-slate-4);
+}
+.bg-slate-500 {
+  background-color: var(--color-slate-5);
+}
+.bg-slate-600 {
+  background-color: var(--color-slate-6);
+}
+.bg-slate-700 {
+  background-color: var(--color-slate-7);
+}
+.bg-slate-800 {
+  background-color: var(--color-slate-8);
+}
+.bg-slate-900 {
+  background-color: var(--color-slate-9);
+}
+
+.bg-zinc-100 {
+  background-color: var(--color-zinc-1);
+}
+.bg-zinc-200 {
+  background-color: var(--color-zinc-2);
+}
+.bg-zinc-300 {
+  background-color: var(--color-zinc-3);
+}
+.bg-zinc-400 {
+  background-color: var(--color-zinc-4);
+}
+.bg-zinc-500 {
+  background-color: var(--color-zinc-5);
+}
+.bg-zinc-600 {
+  background-color: var(--color-zinc-6);
+}
+.bg-zinc-700 {
+  background-color: var(--color-zinc-7);
+}
+.bg-zinc-800 {
+  background-color: var(--color-zinc-8);
+}
+.bg-zinc-900 {
+  background-color: var(--color-zinc-9);
+}
+
+/* Main styles */
+
 html {
   scrollbar-gutter: stable;
 }
 
 body {
-  color: var(--forground-color);
-  background-color: var(--background-color);
-}
-
-h1 {
-  color: var(--prime-forground-color);
-}
-
-p {
-  color: var(--secondary-forground-color);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--primary-forground-color);
+  background-color: var(--primary-background-color);
+  width: 50vw;
+  margin: 2rem auto;
 }
 
 button {
-  font-weight: 700;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  box-shadow: 0 1px 3px 1 rgb(0 0 0 / 0.05);
   padding: 0.4rem 0.6rem 0.4rem 0.6rem;
-  margin: 0.2rem 0.3rem 0.2rem 0.3rem;
-  border-radius: 0.2rem;
+  border-radius: 0.375rem;
   border: none;
-  color: var(--prime-forground-color);
-  background-color: var(--prime-background-color);
+  color: var(--primary-button-text-color);
+  background-color: var(--primary-button-bg-color);
   cursor: pointer;
   &:hover {
-    background-color: var(--secondary-background-color);
+    background-color: var(--secondary-button-bg-color);
+    color: var(--secondary-button-text-color);
   }
 }

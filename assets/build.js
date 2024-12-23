@@ -14,7 +14,7 @@ const loader = {
 
 const plugins = [
   postCssPlugin({
-    plugins: [autoprefixer, postCSSNested, atImport],
+    plugins: [autoprefixer, postcssColorFunction, postCSSNested, atImport],
   }),
 ];
 
