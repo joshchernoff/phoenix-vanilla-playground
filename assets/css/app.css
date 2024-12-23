@@ -19,16 +19,23 @@
     --background-color: #222;
   }
 }
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   color: var(--forground-color);
   background-color: var(--background-color);
 }
+
 h1 {
   color: var(--prime-forground-color);
 }
+
 p {
   color: var(--secondary-forground-color);
 }
+
 button {
   font-weight: 700;
   padding: 0.4rem 0.6rem 0.4rem 0.6rem;
