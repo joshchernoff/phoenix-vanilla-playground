@@ -2,6 +2,7 @@ import { context, build } from "esbuild";
 import autoprefixer from "autoprefixer";
 import postCssPlugin from "@deanc/esbuild-plugin-postcss";
 import postCSSNested from "postcss-nested";
+import atImport from "postcss-import";
 
 const args = process.argv.slice(2);
 const watch = args.includes("--watch");
@@ -13,7 +14,7 @@ const loader = {
 
 const plugins = [
   postCssPlugin({
-    plugins: [autoprefixer, postCSSNested],
+    plugins: [autoprefixer, postCSSNested, atImport],
   }),
 ];
 
